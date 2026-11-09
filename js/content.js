@@ -17,7 +17,7 @@ window.WEDDING_DATA = {
   ceremonyTimeNote: 'Auspicious ceremony muhurt to be announced',
 
   /* ── AUDIO ─────────────────────────────────────────────── */
-  musicFile: 'assets/audio/Aaj Sajeya - Aaj Sajeya (320 kbps).mp3',
+  musicFile: 'assets/audio/aaj-sajeya.mp3',
 
   /* ── IDENTITY ───────────────────────────────────────────── */
   culture: 'Maharashtrian',

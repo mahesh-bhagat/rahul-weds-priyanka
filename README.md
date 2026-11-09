@@ -26,7 +26,7 @@ Then open **http://localhost:8080** in your browser.
 The site can be published from the `main` branch. Its planned public address is:
 
 ```
-https://mahesh-bhagat.github.io/priyanka-rahul/
+https://mahesh-bhagat.github.io/rahul-weds-priyanka/
 ```
 
 In the repository's **Settings → Pages**, set the source to **Deploy from a
