@@ -57,9 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const enterBtn = document.getElementById('enter');
   if (enterBtn) {
     enterBtn.addEventListener('click', () => {
+      tryMusic();
+
       if (window.WeddingAnimations) {
         window.WeddingAnimations.transitionToHero(() => {
-          tryMusic();
           const main = document.getElementById('main');
           if (main) {
             main.focus?.();
@@ -72,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const welcome = document.getElementById('welcome');
         if (main) main.inert = false;
         if (welcome) welcome.classList.add('dismissed');
-        tryMusic();
       }
     });
   }
