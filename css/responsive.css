@@ -1,0 +1,322 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================================== */
+
+/* Small & Standard Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .welcome {
+    padding: 0.75rem;
+  }
+
+  .welcome-card {
+    padding: 2.2rem 1.25rem 2rem;
+  }
+
+  .welcome-card::before {
+    inset: 6px;
+  }
+
+  .corner-ornament {
+    width: 28px;
+    height: 28px;
+  }
+
+  .corner-tl { top: 12px; left: 12px; }
+  .corner-tr { top: 12px; right: 12px; }
+  .corner-bl { bottom: 12px; left: 12px; }
+  .corner-br { bottom: 12px; right: 12px; }
+
+  .welcome-crest {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.5rem;
+  }
+
+  .welcome-sub-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 0.8rem;
+  }
+
+  .welcome-title {
+    margin: 0.5rem 0 0.8rem;
+  }
+
+  .welcome-title .amp {
+    font-size: 0.65em;
+    margin: 0.05em 0;
+  }
+
+  .welcome-date-badge {
+    font-size: 0.88rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.4rem;
+  }
+
+  .btn-royal-primary {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* Topbar Mobile */
+  .topbar {
+    padding: 1rem 4%;
+  }
+
+  .top-date {
+    display: none;
+  }
+
+  .monogram-badge {
+    font-size: 1rem;
+  }
+
+  .sound-control {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.65rem;
+  }
+
+  /* Hero Mobile */
+  .hero {
+    padding: 0 1.2rem 5vh;
+  }
+
+  .hero-photo {
+    object-position: center 20%;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 12vw, 4.2rem);
+  }
+
+  .hero-title .couple-name {
+    display: block;
+  }
+
+  .hero-title .amp {
+    display: block;
+    margin: 0.05em 0;
+    font-size: 0.65em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Countdown Mobile */
+  .countdown-card {
+    padding: 1.5rem 0.8rem 1.4rem;
+  }
+
+  .countdown {
+    gap: 0.4rem;
+  }
+
+  .countdown-item:not(:last-child)::after {
+    display: none;
+  }
+
+  .countdown strong {
+    font-size: 2.1rem;
+  }
+
+  .countdown span {
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+  }
+
+  /* Story Mobile */
+  .story-section {
+    padding: 4rem 1.2rem;
+  }
+
+  .story-intro {
+    margin-bottom: 3.5rem;
+  }
+
+  .story-chapters {
+    gap: 4rem;
+  }
+
+  .chapter-split,
+  .chapter-split.reverse {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .chapter-split.reverse .chapter-photo-col {
+    order: 1;
+  }
+
+  .chapter-split.reverse .chapter-text-col {
+    order: 2;
+  }
+
+  .chapter-split .editorial-photo-frame,
+  .chapter-grand .editorial-photo-frame {
+    height: 380px;
+  }
+
+  .chapter-pair-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .chapter-pair-card .editorial-photo-frame {
+    height: 360px;
+  }
+
+  .story-finale-block {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.25rem;
+  }
+
+  .story-finale-block .editorial-photo-frame {
+    height: 380px;
+  }
+}
+
+/* Specific micro-screen adjustments for 320px */
+@media (max-width: 350px) {
+  .welcome-card {
+    padding: 1.8rem 0.9rem 1.6rem;
+  }
+
+  .devanagari-auspicious {
+    font-size: 1.15rem;
+  }
+
+  .welcome-title {
+    font-size: 2.6rem;
+  }
+
+  .welcome-date-badge {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+  }
+
+  .countdown strong {
+    font-size: 1.9rem;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) {
+  .welcome-card {
+    padding: 4rem 3.5rem;
+  }
+
+  .hero {
+    padding-bottom: 10vh;
+  }
+
+  .hero-content {
+    max-width: 780px;
+  }
+
+  .hero-photo {
+    object-position: center 28%;
+  }
+}
+
+/* Desktop & Large Displays (1024px+) */
+@media (min-width: 1024px) {
+  .welcome-card {
+    max-width: 680px;
+    padding: 4.5rem 4rem;
+  }
+
+  .hero-photo {
+    object-position: center 30%;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+}
+
+/* ==========================================================================
+   STAGE 5 — GALLERY RESPONSIVE
+   ========================================================================== */
+
+/* Tablet: 2-col editorial layout */
+@media (max-width: 900px) and (min-width: 481px) {
+  .gallery-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+    gap: 8px;
+  }
+
+  .gallery-tile          { grid-column: span 3; grid-row: span 2; }
+  .gallery-tile--wide    { grid-column: span 6; grid-row: span 2; }
+  .gallery-tile--tall    { grid-column: span 3; grid-row: span 3; }
+}
+
+/* Mobile: single column, natural heights */
+@media (max-width: 480px) {
+  .gallery-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .gallery-tile {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .gallery-tile--wide {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-tile--tall {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Lightbox: full viewport */
+  .lightbox-img {
+    max-width: 98vw;
+    max-height: 72vh;
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lightbox-prev { left: 0.4rem; }
+  .lightbox-next { right: 0.4rem; }
+
+  .lightbox-footer {
+    padding: 0 3.5rem;
+  }
+}
+
+/* ==========================================================================
+   STAGE 6 — CELEBRATIONS RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  .celebrations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .celebration-card {
+    padding: 1.4rem 1.1rem;
+  }
+
+  .celebration-row {
+    grid-template-columns: 60px 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .celebrations-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

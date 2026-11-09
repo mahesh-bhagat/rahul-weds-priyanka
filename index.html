@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#163D32">
+  <meta name="description" content="Celebrate the wedding of Priyanka and Rahul on 1 January 2027. A journey to forever.">
+  <title>Priyanka &amp; Rahul | A Journey to Forever</title>
+
+  <!-- Google Fonts: Cormorant Garamond, DM Sans, Rozha One -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rozha+One&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- GSAP for Cinematic Motion — loaded synchronously so it is available at DOMContentLoaded -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- STAGE 1 — ROYAL WELCOME SCREEN (INVITATION EXPERIENCE) -->
+  <section class="welcome" id="welcome" aria-modal="true" role="dialog" aria-label="Wedding Invitation">
+    <div class="welcome-watermark" aria-hidden="true"></div>
+
+    <div class="welcome-card">
+      <!-- Traditional Royal Corner Motifs -->
+      <svg class="corner-ornament corner-tl" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 38V12C2 6.47715 6.47715 2 12 2H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 38V14C7 10.134 10.134 7 14 7H38" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <circle cx="14" cy="14" r="3" fill="currentColor"/>
+        <path d="M14 17C14 21 21 21 21 25" stroke="currentColor" stroke-width="0.8"/>
+      </svg>
+      <svg class="corner-ornament corner-tr" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 38V12C2 6.47715 6.47715 2 12 2H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 38V14C7 10.134 10.134 7 14 7H38" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <circle cx="14" cy="14" r="3" fill="currentColor"/>
+        <path d="M14 17C14 21 21 21 21 25" stroke="currentColor" stroke-width="0.8"/>
+      </svg>
+      <svg class="corner-ornament corner-bl" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 38V12C2 6.47715 6.47715 2 12 2H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 38V14C7 10.134 10.134 7 14 7H38" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <circle cx="14" cy="14" r="3" fill="currentColor"/>
+        <path d="M14 17C14 21 21 21 21 25" stroke="currentColor" stroke-width="0.8"/>
+      </svg>
+      <svg class="corner-ornament corner-br" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 38V12C2 6.47715 6.47715 2 12 2H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M7 38V14C7 10.134 10.134 7 14 7H38" stroke="currentColor" stroke-width="0.8" stroke-dasharray="2 2"/>
+        <circle cx="14" cy="14" r="3" fill="currentColor"/>
+        <path d="M14 17C14 21 21 21 21 25" stroke="currentColor" stroke-width="0.8"/>
+      </svg>
+
+      <div class="welcome-inner">
+        <!-- Auspicious Emblem -->
+        <svg class="welcome-crest" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="25" cy="25" r="23" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+          <path d="M25 8C25 8 18 18 18 26C18 30 21 34 25 34C29 34 32 30 32 26C32 18 25 8 25 8Z" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="25" cy="26" r="3" fill="currentColor"/>
+          <path d="M12 28C16 38 34 38 38 28" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+
+        <p class="devanagari-auspicious">॥ शुभ मंगल ॥</p>
+        <p class="welcome-sub-eyebrow">A Celebration of Love &amp; Heritage</p>
+
+        <h1 class="welcome-title">
+          <span class="couple-name" data-bride>The Bride</span>
+          <em class="amp">&amp;</em>
+          <span class="couple-name" data-groom>The Groom</span>
+        </h1>
+
+        <p class="welcome-tagline">Together in love, towards forever</p>
+
+        <div class="royal-divider" aria-hidden="true">
+          <span></span>
+          <span class="motif">✦</span>
+          <span></span>
+        </div>
+
+        <p class="welcome-date-badge">
+          <span>01</span>
+          <span class="bullet">✦</span>
+          <span>01</span>
+          <span class="bullet">✦</span>
+          <span>2027</span>
+        </p>
+
+        <div class="welcome-action-wrap">
+          <button id="enter" class="btn-royal-primary">
+            <span>Enter Our Story</span>
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+
+        <p class="welcome-hint">A sacred journey begins</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN EXPERIENCE -->
+  <main id="main" inert>
+    <!-- Topbar Navigation -->
+    <header class="topbar" id="topbar">
+      <a href="#home" class="monogram-badge" aria-label="Wedding celebration home">
+        <span class="symbol">✦</span>
+        <span data-initials>B &amp; G</span>
+      </a>
+
+      <span class="top-date">01 · JANUARY · 2027</span>
+
+      <button class="sound-control" id="sound" aria-label="Toggle background music" aria-pressed="false">
+        <span class="sound-icon" aria-hidden="true">♫</span>
+        <span class="sound-label">Music off</span>
+      </button>
+    </header>
+
+    <!-- STAGE 2 — CINEMATIC HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="hero-photo-wrap">
+        <img class="hero-photo"
+             src="assets/photos/engagement-08.jpg"
+             alt="The couple in traditional Maharashtrian engagement attire sharing a romantic moment"
+             fetchpriority="high">
+        <div class="hero-overlay" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="eyebrow-royal">The Wedding Celebration</p>
+
+        <h2 class="hero-title">
+          <span class="couple-name" data-bride>The Bride</span>
+          <span class="amp">&amp;</span>
+          <span class="couple-name" data-groom>The Groom</span>
+        </h2>
+
+        <p class="hero-subtitle">Two hearts, one timeless promise</p>
+
+        <div class="hero-date-line" aria-hidden="true">
+          <span></span>
+          01 · 01 · 2027
+          <span></span>
+        </div>
+
+        <div>
+          <a href="#countdown-section" class="hero-scroll-btn" aria-label="Discover our story">
+            <span>Discover our story</span>
+            <span class="hero-scroll-line" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 3 — WEDDING COUNTDOWN -->
+    <section class="countdown-section" id="countdown-section">
+      <p class="eyebrow-royal">Counting the Moments</p>
+      <h2>Until forever begins</h2>
+
+      <div class="countdown-card">
+        <div class="countdown" id="countdown" aria-live="off">
+          <div class="countdown-item">
+            <strong id="days">--</strong>
+            <span>Days</span>
+          </div>
+          <div class="countdown-item">
+            <strong id="hours">--</strong>
+            <span>Hours</span>
+          </div>
+          <div class="countdown-item">
+            <strong id="minutes">--</strong>
+            <span>Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <strong id="seconds">--</strong>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="countdown-meta">Friday · 01 January 2027 · Asia/Kolkata (IST)</p>
+      <p class="countdown-provisional">Auspicious ceremony muhurt to be announced</p>
+    </section>
+
+    <!-- STAGE 4 — ENGAGEMENT STORY ("A PROMISE MADE") -->
+    <section class="story-section" id="story">
+      <div class="story-intro">
+        <p class="eyebrow-royal">The Engagement Story</p>
+        <h2>A Promise Made</h2>
+        <p class="story-subtitle">Some moments are remembered. Others become the beginning of forever.</p>
+        <div class="royal-divider" aria-hidden="true">
+          <span></span>
+          <span class="motif">✦</span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="story-chapters">
+        <!-- Chapter 1: Romantic Couple Portrait (Split Layout) -->
+        <article class="chapter-split" id="chapter-01">
+          <div class="chapter-photo-col">
+            <div class="editorial-photo-frame">
+              <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+              <img src="assets/photos/engagement-02.jpg"
+                   alt="The couple sharing an affectionate moment outdoors in complementary attire"
+                   loading="lazy">
+            </div>
+          </div>
+          <div class="chapter-text-col">
+            <span class="chapter-num">I</span>
+            <span class="chapter-tagline">The First Chapter</span>
+            <h3 class="editorial-title">Where Hearts Found Home</h3>
+            <p class="editorial-caption">In each other, they discovered a quiet joy, deep companionship, and a gentle understanding that turned friendship into destiny.</p>
+          </div>
+        </article>
+
+        <!-- Chapter 2: The Proposal (Grand Centerpiece) -->
+        <article class="chapter-grand" id="chapter-02">
+          <div class="editorial-photo-frame">
+            <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+            <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+            <img src="assets/photos/engagement-07.jpg"
+                 alt="The groom kneeling down holding hands with the bride on the ceremonial stage"
+                 loading="lazy">
+          </div>
+          <div class="chapter-text-col">
+            <span class="chapter-num">II</span>
+            <span class="chapter-tagline">The Proposal</span>
+            <h3 class="editorial-title">With Every Heartbeat</h3>
+            <p class="editorial-caption">Surrounded by the warm blessings of both families and the auspicious glow of the ceremonial hall, a heartfelt question was asked and a lifetime embraced.</p>
+          </div>
+        </article>
+
+        <!-- Chapter 3: Hand Kissing Moment (Reversed Split) -->
+        <article class="chapter-split reverse" id="chapter-03">
+          <div class="chapter-photo-col">
+            <div class="editorial-photo-frame">
+              <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+              <img src="assets/photos/engagement-01.jpg"
+                   alt="The groom kissing the bride's hand during the engagement ceremony"
+                   loading="lazy">
+            </div>
+          </div>
+          <div class="chapter-text-col">
+            <span class="chapter-num">III</span>
+            <span class="chapter-tagline">A Sacred Honor</span>
+            <h3 class="editorial-title">A Kiss of Respect &amp; Devotion</h3>
+            <p class="editorial-caption">A tender gesture sealing mutual respect, grace, and an enduring promise to cherish and protect each other through every step of life.</p>
+          </div>
+        </article>
+
+        <!-- Chapter 4 & 5: Heritage & Walking Together (Two-Column Editorial Grid) -->
+        <div class="chapter-pair-grid">
+          <article class="chapter-pair-card" id="chapter-04">
+            <div class="editorial-photo-frame">
+              <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+              <img src="assets/photos/engagement-04.jpg"
+                   alt="The couple smiling in traditional Maharashtrian green paithani and garlands"
+                   loading="lazy">
+            </div>
+            <div class="chapter-text-col">
+              <span class="chapter-num">IV</span>
+              <span class="chapter-tagline">Roots &amp; Heritage</span>
+              <h3 class="editorial-title">Grace in Sacred Tradition</h3>
+              <p class="editorial-caption">Adorned in royal Maharashtrian attire, honoring timeless rituals, family heritage, and the blessings that bind two genealogies into one.</p>
+            </div>
+          </article>
+
+          <article class="chapter-pair-card" id="chapter-05">
+            <div class="editorial-photo-frame">
+              <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+              <img src="assets/photos/engagement-03.jpg"
+                   alt="The couple holding hands and walking together through a sunlit meadow"
+                   loading="lazy">
+            </div>
+            <div class="chapter-text-col">
+              <span class="chapter-num">V</span>
+              <span class="chapter-tagline">The Journey Ahead</span>
+              <h3 class="editorial-title">Walking Towards Tomorrow</h3>
+              <p class="editorial-caption">Side by side through every path ahead, bound by friendship, laughter, and an unshakable devotion to walk the road together.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Chapter 6: Emotional Black & White Close-up (Dark Finale Block) -->
+        <article class="story-finale-block" id="chapter-06">
+          <div class="chapter-photo-col">
+            <div class="editorial-photo-frame">
+              <span class="frame-corner frame-corner-tl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-tr" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-bl" aria-hidden="true"></span>
+              <span class="frame-corner frame-corner-br" aria-hidden="true"></span>
+              <img src="assets/photos/engagement-05.jpg"
+                   alt="Intimate black and white close-up of the couple with wedding rings and mehendi"
+                   loading="lazy">
+            </div>
+          </div>
+          <div class="chapter-text-col">
+            <span class="chapter-num">VI</span>
+            <span class="chapter-tagline">The Eternal Vow</span>
+            <h3 class="editorial-title">The Unspoken Promise</h3>
+            <p class="editorial-caption">A quiet, eternal whisper between two souls. With hearts entwined and memories etched in love, the countdown to 1 January 2027 begins.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STAGE 5 — ENGAGEMENT GALLERY: "Moments to Remember" -->
+    <section class="gallery-section" id="gallery-section">
+      <div class="gallery-intro">
+        <p class="eyebrow-royal">The Engagement Gallery</p>
+        <h2 data-gallery-heading>Moments to Remember</h2>
+        <p data-gallery-subtitle>A collection of little moments that became beautiful memories.</p>
+      </div>
+      <!-- Gallery tiles injected by gallery.js from content.js -->
+      <div class="gallery-grid" role="list" aria-label="Engagement photo gallery"></div>
+    </section>
+
+    <!-- STAGE 6 — WEDDING CELEBRATIONS: "The Celebrations" -->
+    <section class="celebrations-section" id="celebrations-section">
+      <div class="celebrations-intro">
+        <p class="eyebrow-royal">Save the Date</p>
+        <h2>The Celebrations</h2>
+        <p>Together with our loved ones, we begin a beautiful new chapter.</p>
+      </div>
+      <!-- Celebration cards injected by celebrations.js from content.js -->
+      <div class="celebrations-grid" id="celebrations-grid" role="list" aria-label="Wedding celebration events"></div>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <p class="footer-monogram" aria-hidden="true">✦</p>
+        <p>Made with love &nbsp;·&nbsp; 01 January 2027</p>
+        <p class="footer-tagline">A Journey to Forever</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Application Scripts (order matters) -->
+  <script src="js/content.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/celebrations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
