@@ -23,29 +23,14 @@ Then open **http://localhost:8080** in your browser.
 
 ## GitHub Pages Deployment
 
-The site is configured to deploy automatically from the `main` branch using
-the workflow in `.github/workflows/pages.yml`. The planned public address is:
+The site can be published from the `main` branch. Its planned public address is:
 
 ```
 https://mahesh-bhagat.github.io/priyanka-rahul/
 ```
 
-In the repository's **Settings → Pages**, select **GitHub Actions** as the
-build and deployment source if it is not already selected.
-
-### Option 1 — Repository Root
-
-1. Push the entire `wedding-forever` folder contents to the **root** of a repository.
-2. Go to **Settings → Pages**.
-3. Set **Source** to `Deploy from a branch`, select **main** (or `gh-pages`) and **/ (root)**.
-4. Save. GitHub Pages will publish at:
-   ```
-   https://mahesh-bhagat.github.io/priyanka-rahul/
-   ```
-
-### Option 2 — Subdirectory / Project Site
-
-If the repo root contains other files, place website files in a `docs/` folder and configure GitHub Pages to serve from `/docs`.
+In the repository's **Settings → Pages**, set the source to **Deploy from a
+branch**, select **main** and **/ (root)**, then save.
 
 ### Notes
 
