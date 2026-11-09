@@ -36,7 +36,7 @@ branch**, select **main** and **/ (root)**, then save.
 
 - `.nojekyll` is included to prevent Jekyll processing, which could strip `_` prefixed files or interfere with asset paths.
 - All asset references use **relative paths** (`assets/photos/...`, `css/...`, `js/...`) — no absolute or localhost URLs.
-- Background music starts when a visitor selects **Enter Our Story**. Browsers block sound autoplay before a user interaction; the sound control can pause or resume playback.
+- Background music attempts to start as soon as the page opens. Browsers that block sound autoplay require a user interaction; selecting **Enter Our Story** retries playback. The sound control can pause or resume playback.
 - No backend, database, API keys or server-side code.
 - The site works fully after a hard refresh (`Ctrl+Shift+R` / `Cmd+Shift+R`).
 - Google Fonts and GSAP load from CDN — a live internet connection is required for the first load.

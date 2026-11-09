@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let tryMusic = () => {};
   if (typeof window.setupAudio === 'function') {
     tryMusic = window.setupAudio();
+    tryMusic();
   }
 
   // Initialize gallery (renders photo grid from content.js data)
