@@ -36,7 +36,8 @@ branch**, select **main** and **/ (root)**, then save.
 
 - `.nojekyll` is included to prevent Jekyll processing, which could strip `_` prefixed files or interfere with asset paths.
 - All asset references use **relative paths** (`assets/photos/...`, `css/...`, `js/...`) — no absolute or localhost URLs.
-- Background music attempts to start as soon as the page opens. Browsers that block sound autoplay require a user interaction; selecting **Enter Our Story** retries playback. The sound control can pause or resume playback.
+- Background music starts once after **Enter Our Story** is selected (subject to browser playback rules). The sound control can pause or resume the same looping track; fireworks do not control or restart music.
+- Silent full-viewport fireworks begin after the invitation transition and continue while the page is open. They pause while the tab is hidden, use bounded canvas particles, and respect reduced-motion preferences.
 - No backend, database, API keys or server-side code.
 - The site works fully after a hard refresh (`Ctrl+Shift+R` / `Cmd+Shift+R`).
 - Google Fonts and GSAP load from CDN — a live internet connection is required for the first load.

@@ -6,6 +6,9 @@
   let audio = null;
   let isAvailable = false;
   let userPaused = false;
+  let playRequest = null;
+  let setupComplete = false;
+  let entryPlaybackAttempted = false;
 
   // Initialize audio element with safe error traps
   try {
@@ -51,9 +54,60 @@
     }
   }
 
+  function playIfNeeded() {
+    if (!audio || userPaused) return Promise.resolve(false);
+
+    if (!audio.paused && !audio.ended) {
+      updateButtonUI(true, true);
+      return Promise.resolve(true);
+    }
+
+    if (playRequest) return playRequest;
+
+    try {
+      playRequest = Promise.resolve(audio.play())
+        .then(() => {
+          isAvailable = true;
+          if (userPaused) {
+            audio.pause();
+            updateButtonUI(false, true);
+            return false;
+          }
+          updateButtonUI(true, true);
+          return true;
+        })
+        .catch((err) => {
+          isAvailable = false;
+          updateButtonUI(false, false);
+          console.info('Background music playback was blocked or unavailable:', err.message);
+          return false;
+        })
+        .then((result) => {
+          playRequest = null;
+          return result;
+        });
+    } catch (err) {
+      isAvailable = false;
+      updateButtonUI(false, false);
+      console.info('Background music playback was unavailable:', err.message);
+      playRequest = null;
+      return Promise.resolve(false);
+    }
+
+    return playRequest;
+  }
+
+  function playOnEntry() {
+    if (entryPlaybackAttempted) return Promise.resolve(false);
+    entryPlaybackAttempted = true;
+    return playIfNeeded();
+  }
+
   window.setupAudio = function() {
     const button = document.getElementById('sound');
     if (!button) return () => {};
+    if (setupComplete) return playOnEntry;
+    setupComplete = true;
 
     // Restore session preference if user had chosen during this session
     const sessionPref = sessionStorage.getItem('wedding_music_pref');
@@ -64,7 +118,7 @@
     button.addEventListener('click', async function() {
       if (!audio) return;
 
-      if (!audio.paused) {
+      if (!audio.paused || playRequest) {
         audio.pause();
         userPaused = true;
         sessionStorage.setItem('wedding_music_pref', 'paused');
@@ -72,39 +126,21 @@
       } else {
         userPaused = false;
         sessionStorage.setItem('wedding_music_pref', 'playing');
-        try {
-          await audio.play();
-          isAvailable = true;
-          updateButtonUI(true, true);
-        } catch (err) {
-          isAvailable = false;
-          updateButtonUI(false, false);
-          console.info('Background music playback paused or file missing:', err.message);
-        }
+        await playIfNeeded();
       }
     });
 
     if (audio) {
-      audio.addEventListener('play', () => updateButtonUI(true, true));
+      audio.addEventListener('play', () => {
+        if (userPaused) {
+          audio.pause();
+          return;
+        }
+        updateButtonUI(true, true);
+      });
       audio.addEventListener('pause', () => updateButtonUI(false, isAvailable));
     }
 
-    // Return trigger function for initial site entrance
-    return async function tryPlayOnEntry() {
-      if (userPaused) return; // Respect user preference
-
-      if (audio) {
-        try {
-          await audio.play();
-          isAvailable = true;
-          updateButtonUI(true, true);
-        } catch (err) {
-          // Normal browser autoplay restriction or missing file
-          isAvailable = false;
-          updateButtonUI(false, false);
-          console.info('Audio autoplay on entry deferred or file not found.');
-        }
-      }
-    };
+    return playOnEntry;
   };
 })();

@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let tryMusic = () => {};
   if (typeof window.setupAudio === 'function') {
     tryMusic = window.setupAudio();
-    tryMusic();
   }
 
   // Initialize gallery (renders photo grid from content.js data)
@@ -54,14 +53,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.WeddingAnimations.initStoryObserver();
   }
 
+  if (window.WeddingFireworks) {
+    window.WeddingFireworks.init();
+  }
+
+  const celebrateAfterEntry = () => {
+    if (!window.WeddingFireworks) return;
+    window.WeddingFireworks.playWelcomeShow();
+    window.WeddingFireworks.observeCelebrationSection();
+  };
+
   // Handle "Enter Our Story" action
   const enterBtn = document.getElementById('enter');
   if (enterBtn) {
+    let entryStarted = false;
     enterBtn.addEventListener('click', () => {
+      if (entryStarted) return;
+      entryStarted = true;
+      enterBtn.disabled = true;
       tryMusic();
 
       if (window.WeddingAnimations) {
         window.WeddingAnimations.transitionToHero(() => {
+          celebrateAfterEntry();
           const main = document.getElementById('main');
           if (main) {
             main.focus?.();
@@ -74,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const welcome = document.getElementById('welcome');
         if (main) main.inert = false;
         if (welcome) welcome.classList.add('dismissed');
+        celebrateAfterEntry();
       }
     });
   }
